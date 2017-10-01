@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Methods {
@@ -31,4 +32,25 @@ public class Methods {
         }
         return max;
     }
+
+    int findMin(int[][] wejscie) {
+        int min = wejscie[0][0];
+
+        for (int i = 1; i < wejscie.length; i++) {
+            for (int j = 1; j < wejscie[i].length; j++) {
+                if (wejscie[i][j] < min) {
+                    min = wejscie[i][j];
+                }
+            }
+        }
+        return min;
+    }
+
+    void print(int[][] wejscie) {
+        for (int i = 0; i < wejscie.length; i++) {
+            for (int j = 0; j < wejscie[i].length; j++)
+                System.out.println(wejscie[i][j]);
+        }
+    }
 }
+
