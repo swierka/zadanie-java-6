@@ -7,14 +7,16 @@ public class RandomTable2 {
         Random random = new Random();
         int[] randomTable = new int[10];
         int i = 0;
-        int j= 0;
+        int j = 9;
 
         for (i = 0; i < randomTable.length * 2; i++) {
-            if (i < 10) {
-                j = i;
-            } j = randomTable.length - i-1;
-            randomTable[j] = random.nextInt();
-            System.out.println(randomTable[j]);
+            if (i > 9) {
+                System.out.println(randomTable[j]);
+                j--;
+            } else {
+                randomTable[i] = random.nextInt();
+                System.out.println(randomTable[i]);
+            }
         }
     }
 }
