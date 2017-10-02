@@ -20,7 +20,7 @@ public class MultiArray {
     }
 
     int findMax() {
-        int max = tablica[0][0]; //najlepiej przypisac 1. element z tablicy
+        int max = tablica[0][0]; //najlepiej przypisac 1. element z tablicy, bo jak dame = 0, to nie zle zadziala z liczbami ujemnymi
 
         for (int n = 0; n < tablica.length; n++) {
             for (int m = 0; m < tablica[n].length; m++) {
@@ -36,7 +36,7 @@ public class MultiArray {
         int min = tablica[0][0];
 
         for (int n = 0; n < tablica.length; n++) {
-            for (int m = 0; n < tablica[n].length; m++) {
+            for (int m = 0; m < tablica[n].length; m++) {
                 if (tablica[n][m] < min) {
                     min = tablica[n][m];
                 }

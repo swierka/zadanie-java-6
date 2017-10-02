@@ -9,5 +9,6 @@ public class MethodsTest {
         multiArray.print();
 
         System.out.println(multiArray.findMax());
+        System.out.println(multiArray.findMin());
     }
 }
