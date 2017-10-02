@@ -2,40 +2,28 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class MultiArray {
-    int[][] tablica;
-    Random random = new Random();
+    private int[][] tablica;
+    private Random random = new Random();
 
     public MultiArray(int n, int m) {
         this.tablica = new int[n][m];
 
-        tablica[n][m] = random.nextInt();
-        for (n = 0; ; n++) {
-            for (m = 0; ; m++) {
-                tablica[n][m] = random.nextInt();
+        randomize(); //
+    }
+
+    void randomize() {
+        for (int n = 0; n < tablica.length; n++) {
+            for (int m = 0; m < tablica[n].length; m++) {
+                tablica[n][m] = random.nextInt(100);
             }
         }
     }
 
-    int randomize(int[][] tablica) {
-        this.tablica = tablica;
-        Random random = new Random();
+    int findMax() {
+        int max = tablica[0][0]; //najlepiej przypisac 1. element z tablicy
 
-        tablica[n][m] = random.nextInt();
-        for (n = 0; ; n++) {
-            for (m = 0; ; m++) {
-                tablica[n][m] = random.nextInt();
-
-                return tablica[n][m];
-            }
-        }
-    }
-
-    int findMax(int[][] tablica) {
-        this.tablica = tablica;
-        int max = tablica[0][0];
-
-        for (int n = 1; n < tablica.length; n++) {
-            for (int m = 1; m < tablica[n].length; m++) {
+        for (int n = 0; n < tablica.length; n++) {
+            for (int m = 0; m < tablica[n].length; m++) {
                 if (tablica[n][m] > max) {
                     max = tablica[n][m];
                 }
@@ -44,12 +32,11 @@ public class MultiArray {
         return max;
     }
 
-    int findMin(int[][] tablica) {
-        this.tablica = tablica;
+    int findMin() {
         int min = tablica[0][0];
 
-        for (int n = 1; n < tablica.length; n++) {
-            for (int m = 1; n < tablica[n].length; m++) {
+        for (int n = 0; n < tablica.length; n++) {
+            for (int m = 0; n < tablica[n].length; m++) {
                 if (tablica[n][m] < min) {
                     min = tablica[n][m];
                 }
@@ -58,11 +45,11 @@ public class MultiArray {
         return min;
     }
 
-    void print(int[][] tablica) {
-        this.tablica = tablica;
+    void print() {
         for (int n = 0; n < tablica.length; n++) {
             for (int m = 0; m < tablica[n].length; m++)
-                System.out.println(tablica[n][m]);
+                System.out.print(tablica[n][m] + " ");
+            System.out.println();
         }
     }
 }

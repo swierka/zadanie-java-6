@@ -11,7 +11,7 @@ public class ArrayTest {
 
 
         tablica2[0][0] = 4;
-        tablica2[0][1] = 4;
+        tablica2[0][1] = 5;
         tablica2[1][0] = 4;
         tablica2[1][1] = 4;
 
