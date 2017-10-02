@@ -6,20 +6,23 @@ public class ArrayComparator {
         int i = 0;
         int j = 0;
         boolean result = false;
-        boolean result2 = false;
-        boolean result3 = false;
+
+        outerLoop:
         for (i = 0; i < tablica1.length; i++) {
             for (j = 0; j < tablica1[i].length; j++) {
-                result = Arrays.equals(tablica1[i], tablica2[i]);
-                result2 = Arrays.equals(tablica1[j], tablica2[j]);
+                if (tablica1[i][j] == tablica2[i][j]) {
+                    break;
+                } else {
+                    break outerLoop;
+                }
+            }
+
+            if (i == (tablica1.length-1) && j == (tablica2.length-1)) {
+                result = true;
+            } else {
+                result = false;
             }
         }
-
-        if (result == true && result2 == true) {
-            result3 = true;
-        } else {
-            result3 = false;
-        }
-        return result3;
+        return result;
     }
 }
